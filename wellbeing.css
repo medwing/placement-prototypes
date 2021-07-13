@@ -1,0 +1,163 @@
+.mobile>div {
+    position:relative;
+    height:200px;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.mobile-image {
+    position:absolute;
+    z-index:0;
+    width: 200px;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.mobile-image>img {
+    margin:0 !important;
+    max-width: 200px;
+}
+
+.mobile-price {
+    position:absolute;
+    z-index:1;
+    background-color:rgba(0,0,0,0.5);
+    color:#fff;
+    height: 40px;
+    bottom: 0;
+    width: 200px;
+}
+
+.price-explanation {
+    padding-left:10px;
+    font-size:0.8em;
+}
+
+.price-display {
+    padding-left:10px;
+    font-size: 1.3em;
+}
+
+.screen {
+    text-align:justify;
+    width:100%;
+}
+
+.Name {
+    display:inline-block;
+    margin-left:-2px;
+}
+.Name {
+    line-height: 20px;
+    font-size: 16px;
+    color: #0896ff;
+    font-weight: normal;
+}
+.City {
+    font-size: 12px;
+    line-height: 16px;
+    margin: 5px 0 0 0;
+    color: #666;
+}
+.facility{
+    display:none;
+    width:35px;
+}
+img[data-facilities*="Parking"][data-facility="parking"]{
+    display:inline-block;
+}
+img[data-facilities*="WIFI"][data-facility="wifi"]{
+    display:inline-block;
+}
+img[data-facilities*="Gym"][data-facility="gym"]{
+    display:inline-block;
+}
+
+.display-facility {
+    display:inline-block;
+    color: #aaaaaa;
+    padding: 0!important;
+}
+
+.button-learn-more{
+    display:inline-block;
+    float: right;
+}
+
+.button-learn-more>a {
+    color:white!important;
+    background-color: rgb(8, 158, 255);
+    border-radius:2px;
+    display:inline-block;
+    font-size:14px;
+    font-weight:bold;
+    padding:8px!important;
+    text-align:center;
+    text-decoration:none;
+    float: right;
+}
+
+.rate{
+    display: inline-block;
+    font-size: 19px;
+    margin-left: 8px;
+}
+
+
+/*** Awesome Table ***/
+
+
+/*** Google visualization override ***/
+
+/* Table view header */
+.google-visualization-table-table .gradient,
+.google-visualization-table-div-page .gradient {
+        background: #3C81F8 !important;
+        color:#ffffff;
+}
+
+/* selected/hovered row in a TABLE view */
+.google-visualization-table-tr-sel td,
+.google-visualization-table-tr-over td {
+        background-color: #D6E9F8!important;
+}
+
+/*** Configuration of FILTERS ***/
+
+
+/* CategoryFilter & csvFilter hovered item in the dropdown */
+.charts-menuitem-highlight {
+        background-color:#437AF8!important;
+        color:#FFF!important;
+}
+
+/* header */
+.google-visualization-table-table .gradient, .google-visualization-table-div-page .gradient {
+        background: #437AF8 !important;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        font-weight: normal;
+}
+
+.google-visualization-controls-label {
+        font-weight: 500!important;
+}
+
+@media (max-width: 550px) {
+        .mobile {
+                margin: 10px auto 10px auto!important;
+                float:none;
+        }
+        .mobile-bis {
+                margin : 10px!important;
+        }
+}
+@media (min-width: 550px) {
+        .mobile {
+                margin: 20px!important;
+                float:left;
+        }
+        .mobile-bis {
+                margin : 20px!important;
+        }
+}
