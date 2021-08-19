@@ -108,6 +108,14 @@ img[data-facilities*="Gym"][data-facility="gym"]{
 
 /*** Awesome Table ***/
 
+.awt-csvFilter-button {
+	border: 1px solid rgba(0, 0, 0, 0.1) !important;
+	background-color: #835A58 !important;
+	color: #11E440 !important;
+	display: flex !important;
+	padding: 15px 12px !important;
+	vertical-align: middle !important;
+}
 
 /*** Google visualization override ***/
 
