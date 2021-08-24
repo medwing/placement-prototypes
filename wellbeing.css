@@ -23,7 +23,7 @@
 /*layout*/
 .details_pane .col1 {
   float: left;
-  width: 250px;
+  width: 220px;
   padding: 15px;
 }
 
@@ -35,13 +35,12 @@
 
 .details_pane .col3 {
   float: left;
-  width: 25%;
   padding: 15px;
 }
 
 .details_pane .col4 {
-  float: left;
-  width: 60px;
+  float: right;
+  width: 40px;
   padding: 15px;
 }
 
