@@ -22,53 +22,6 @@
 
 /*layout*/
 
-.colmask {
- position:relative; /* This fixes the IE7 overflow hidden bug and stops the layout jumping out of place */
- clear:both;
- float:left;
- width:100%; /* width of whole page */
- overflow:hidden; /* This chops off any overhanging divs */
-}
-/* details pane 3 column settings */
-.details_pane {
- /*background:#ff9;*/ /* Right column background colour */
-}
-.details_pane .colmid {
- float:left;
- width:200%;
- position:relative;
- right:100%;
- /*background:#fff;*/ /* Centre column background colour */
-}
-.details_pane .colleft {
- float:left;
- width:100%;
- margin-left:-50%;
- position:relative;
- /*background:#FFD8B7;*/ /* Left column background colour */
-}
-.details_pane .col1wrap {
- float:left;
- width:50%;
- position:relative;
- padding-bottom:1em; /* Centre column bottom padding. Leave it out if it's zero */
-}
-.details_pane .col1 {
- position:relative;
- left:200%;
- overflow:hidden;
-}
-.details_pane .col2 {
- float:left;
- float:right; /* This overrides the float:left above */
- position:relative;
-}
-.details_pane .col3 {
- float:left;
- float:right; /* This overrides the float:left above */
- position:relative;
- left:50%;
-}
 
 
 
