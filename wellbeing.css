@@ -40,7 +40,10 @@
 }
 
 .sub_text{
-
+    font-size: 12px;
+    line-height: 16px;
+    margin: 5px 0 0 0;
+    color: #666;
 }
 
 .screen {
