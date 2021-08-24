@@ -101,6 +101,7 @@ overflow:hidden;
     margin-right: 10px;
     color: rgb(101, 152, 203);
     font-size: 0.75rem;
+    cursor: pointer;
 }	
 
 /*** Awesome Table ***/
