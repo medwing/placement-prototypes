@@ -81,6 +81,15 @@ overflow:hidden;
     float: right;
 }
 
+.button-medwing {
+    padding: 6px;
+    background: rgb(241, 246, 250);
+    border: 1px solid rgb(230, 241, 250);
+    border-radius: 5px;
+    margin-right: 10px;
+    color: rgb(101, 152, 203);
+    font-size: 0.75rem;
+}	
 
 /*** Awesome Table ***/
 /*
