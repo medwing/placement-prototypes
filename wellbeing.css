@@ -20,59 +20,10 @@
     max-width: 200px;
 }
 
-.mobile-price {
-    position:absolute;
-    z-index:1;
-    background-color:rgba(0,0,0,0.5);
-    color:#fff;
-    height: 40px;
-    bottom: 0;
-    width: 200px;
-}
-
-.price-explanation {
-    padding-left:10px;
-    font-size:0.8em;
-}
-
-.price-display {
-    padding-left:10px;
-    font-size: 1.3em;
-}
 
 .screen {
     text-align:justify;
     width:100%;
-}
-
-.Name {
-    display:inline-block;
-    margin-left:-2px;
-}
-.Name {
-    line-height: 20px;
-    font-size: 16px;
-    color: #0896ff;
-    font-weight: normal;
-}
-.City {
-    font-size: 12px;
-    line-height: 16px;
-    margin: 5px 0 0 0;
-    color: #666;
-}
-.facility{
-    display:none;
-    width:35px;
-}
-img[data-facilities*="Parking"][data-facility="parking"]{
-    display:inline-block;
-}
-img[data-facilities*="WIFI"][data-facility="wifi"]{
-    display:inline-block;
-}
-img[data-facilities*="Gym"][data-facility="gym"]{
-    display:inline-block;
 }
 
 
@@ -87,14 +38,6 @@ overflow:hidden;
     position: relative;
 }
 
-
-
-
-.display-facility {
-    display:inline-block;
-    color: #aaaaaa;
-    padding: 0!important;
-}
 
 .button-learn-more{
     display:inline-block;
@@ -112,12 +55,6 @@ overflow:hidden;
     text-align:center;
     text-decoration:none;
     float: right;
-}
-
-.rate{
-    display: inline-block;
-    font-size: 19px;
-    margin-left: 8px;
 }
 
 
