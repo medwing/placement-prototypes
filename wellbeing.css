@@ -36,6 +36,9 @@
 .details_pane .col3 {
   float: left;
   padding: 15px;
+  margin-right: 100px;
+  margin-left: 550px;
+  width=100%;
 }
 
 .details_pane .col4 {
