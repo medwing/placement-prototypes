@@ -39,18 +39,17 @@
   padding: 15px;
 }
 
-.sub_text{
-    font-size: 12px;
-    line-height: 16px;
-    margin: 5px 0 0 0;
-    color: #666;
+.sub_text {
+   font-size: 12px;
+   line-height: 16px;
+   margin: 5px 0 0 0;
+   color: #666;
 }
 
 .screen {
     text-align:justify;
     width:100%;
 }
-
 
 .rating-container {
 height:17px;
