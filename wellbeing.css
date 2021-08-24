@@ -75,6 +75,21 @@ img[data-facilities*="Gym"][data-facility="gym"]{
     display:inline-block;
 }
 
+
+.rating-container {
+height:17px;
+overflow:hidden;
+}
+
+.rating {
+    width:100px;
+    left: -11px;
+    position: relative;
+}
+
+
+
+
 .display-facility {
     display:inline-block;
     color: #aaaaaa;
