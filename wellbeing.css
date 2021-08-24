@@ -59,7 +59,7 @@ overflow:hidden;
 
 
 /*** Awesome Table ***/
-
+/*
 .awt-csvFilter-button {
 	border: 1px solid rgba(0, 0, 0, 0.1) !important;
 	background-color: #835A58 !important;
@@ -68,7 +68,7 @@ overflow:hidden;
 	padding: 15px 12px !important;
 	vertical-align: middle !important;
 }
-
+*/
 /*** Google visualization override ***/
 
 /* Table view header */
@@ -96,7 +96,7 @@ overflow:hidden;
 
 /* header */
 .google-visualization-table-table .gradient, .google-visualization-table-div-page .gradient {
-        background: #437AF8 !important;
+        background: #9DD0F1 !important;
         color: #FFFFFF;
         text-transform: uppercase;
         font-weight: normal;
