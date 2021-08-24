@@ -79,11 +79,11 @@ overflow:hidden;
 }
 
 /* selected/hovered row in a TABLE view */
-/*.google-visualization-table-tr-sel td,
+.google-visualization-table-tr-sel td,
 .google-visualization-table-tr-over td {
-        background-color: #D6E9F8!important;
+        background-color: #FFFFFF!important;
 }
-*/
+
 
 /*** Configuration of FILTERS ***/
 
