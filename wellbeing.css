@@ -81,6 +81,10 @@ overflow:hidden;
     float: right;
 }
 
+.body{
+    color: rgb(72, 80, 100);
+}
+
 .button-medwing {
     padding: 6px;
     background: rgb(241, 246, 250);
