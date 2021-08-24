@@ -100,7 +100,6 @@ overflow:hidden;
 .google-visualization-table-div-page .gradient {
         background: #3C81F8 !important;
         color:#ffffff;
-	padding: 10px 8px !important;
 }
 
 /* selected/hovered row in a TABLE view */
@@ -125,6 +124,7 @@ overflow:hidden;
         color: #FFFFFF;
         text-transform: uppercase;
         font-weight: normal;
+	padding: 10px 8px !important;
 }
 
 .google-visualization-controls-label {
