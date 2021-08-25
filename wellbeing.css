@@ -190,10 +190,10 @@ overflow:hidden;
   .modal-content {
     background-color: #fefefe;
     margin: 5% auto; /* 5% from the top and centered */
-    padding: 20px;
+    padding: 5px;
     border: 1px solid #888;
-    width: 100%; /* Could be more or less, depending on screen size */
-    height: 100%;
+    width: 80%; /* Could be more or less, depending on screen size */
+    height: 95%;
   }
   
   /* The Close Button */
