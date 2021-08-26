@@ -12,7 +12,7 @@ var g_thisURL;
 
 function bootload(facilityHasRecords, thisURL){
   invokeIframes();
-  hideContentIfNoResults(facilityHasRecords);
+  //hideContentIfNoResults(facilityHasRecords);
   
   var element = document.getElementById("urlId");
   element.innerHTML = thisURL;
