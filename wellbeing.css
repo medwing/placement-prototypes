@@ -84,7 +84,7 @@ overflow:hidden;
     cursor: pointer;
 }	
 
-/* Main Page **/
+/* Main Page - needs refactoring **/
 
   iframe {
     width: 1px;
@@ -129,7 +129,12 @@ overflow:hidden;
     max-width: 300px;
     margin: 0px auto;
   }
-}
+
+  .infoText {
+    font-family: "Roboto", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.75rem;
+    color: rgb(72, 80, 100);
+  }
 
 
 /*** Awesome Table ***/
