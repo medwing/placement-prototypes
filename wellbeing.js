@@ -50,7 +50,7 @@ function showingNoContentScreen(){
 }
 
 function hideContentIfNoResults(showContent){
-  showContents = true;
+  showContent = true;
   
   if (!showContent){
     var element = document.getElementById("noReviews");
