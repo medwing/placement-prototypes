@@ -69,26 +69,8 @@ function invokeIframes(){
 function loadDetailsPane(view){
 
   var detailsIframe = document.getElementById("detailsIframe");
-
-  switch(view) {
-  case 1:
-    // all non archived reviews
-    g_triggerExpected = true;
-    detailsIframe.src = "`+ detailsURL + `";
-    break;
-  case 2:
-    g_triggerExpected = true;
-    detailsIframe.src = "`+ detailsCandidateOnlyURL + `";
-    break;
-  case 3: 
-    g_triggerExpected = true;
-    detailsIframe.src = "`+ detailsArchived + `";
-    break;
-  default:
-    g_triggerExpected = true;
-    detailsIframe.src = detailsIframe.src;
-    break;
-  }
+  g_triggerExpected = true;
+  detailsIframe.src = view;
 }
 
 function onLoadHandler_ReloadIfEditingWasDoneInsideTheIFrame(){
