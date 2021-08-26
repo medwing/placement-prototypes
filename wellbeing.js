@@ -103,7 +103,7 @@ function closeModal(){
 
 
 function reload_page(){
-   setTimeout(function(){ window.location.replace(g_thisURL); }, 300);  
+   window.location.replace(g_thisURL);
 }
 
 function reload_iframes() {
@@ -111,15 +111,6 @@ function reload_iframes() {
     loadDetailsPane();
 
     var summaryIframe = document.getElementById("summaryIframe");
-    summaryIframe.src = summaryIframe.src;
-  
-    setTimeout(function(){
-      g_triggerExpected=true;
-      loadDetailsPane();
-
-      var summaryIframe = document.getElementById("summaryIframe");
-      summaryIframe.src = summaryIframe.src;
-    
-    }, 2000);  
+    summaryIframe.src = summaryIframe.src;  
 
 }
