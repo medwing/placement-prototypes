@@ -99,7 +99,7 @@ function showModal(url) {
 
 function closeModal(){
   g_modal.style.display = "none";
-  reload_page();
+  reload_iframes();
 }
 
 
