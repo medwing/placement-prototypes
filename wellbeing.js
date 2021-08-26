@@ -98,21 +98,15 @@ function showModal(url) {
 
 function closeModal(){
   g_modal.style.display = "none";
-  reload_iframes();
+  reload_page();
 }
 
 
 function reload_page(){
-   window.location.replace("` + thisURL + `");
+   window.location.replace("` + g_thisURL + `");
 }
 
 function reload_iframes() {
-    
-    if (showingNoContentScreen()){
-      reload_page();
-      return;
-      //unfortunately, I can't get a reload page working so this is a workaround for now. Just to show all of the page.
-    }
     
     g_triggerExpected=true;
     loadDetailsPane();
