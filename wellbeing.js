@@ -72,7 +72,7 @@ function loadDetailsPane(view){
   var detailsIframe = document.getElementById("detailsIframe");
   g_triggerExpected = true;
   
-  if (view === "")
+  if (!view)
   {
     view = detailsIframe.src;
   }
