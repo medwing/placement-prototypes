@@ -103,7 +103,7 @@ function closeModal(){
 
 
 function reload_page(){
-   window.location.replace("` + g_thisURL + `");
+   window.location.replace(g_thisURL);
 }
 
 function reload_iframes() {
