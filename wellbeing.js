@@ -10,9 +10,8 @@ var g_modaliframe;
 var g_triggerExpected = true; //first page load
 var g_thisURL;
 
-function bootload(facilityHasRecords, thisURL){
+function bootload(thisURL){
   invokeIframes();
-  hideContentIfNoResults(facilityHasRecords);
   
   var element = document.getElementById("urlId");
   element.innerHTML = thisURL;
