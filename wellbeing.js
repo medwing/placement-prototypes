@@ -103,14 +103,17 @@ function closeModal(){
 
 
 function reload_page(){
-   window.location.replace(g_thisURL);
+   setTimeout(function(){ window.location.replace(g_thisURL); }, 2000);  
 }
 
 function reload_iframes() {
-    
-    g_triggerExpected=true;
-    loadDetailsPane();
+    setTimeout(function(){
+      g_triggerExpected=true;
+      loadDetailsPane();
 
-    var summaryIframe = document.getElementById("summaryIframe");
-    summaryIframe.src = summaryIframe.src;
+      var summaryIframe = document.getElementById("summaryIframe");
+      summaryIframe.src = summaryIframe.src;
+    
+    }, 2000);  
+
 }
