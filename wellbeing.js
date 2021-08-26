@@ -103,7 +103,7 @@ function closeModal(){
 
 
 function reload_page(){
-   setTimeout(function(){ window.location.replace(g_thisURL); }, 2000);  
+   setTimeout(function(){ window.location.replace(g_thisURL); }, 300);  
 }
 
 function reload_iframes() {
@@ -114,6 +114,6 @@ function reload_iframes() {
       var summaryIframe = document.getElementById("summaryIframe");
       summaryIframe.src = summaryIframe.src;
     
-    }, 2000);  
+    }, 300);  
 
 }
