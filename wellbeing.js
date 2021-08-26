@@ -8,14 +8,15 @@ var g_modaliframe;
 //We use the global variable because we are allowed to know when an iframe has reloaded via the onload event
 //but not to which URL it loaded (security cross-domain blah blah)
 var g_triggerExpected = true; //first page load
+var g_thisURL;
 
-
-function bootload(facilityHasRecords){
+function bootload(facilityHasRecords, thisURL){
   invokeIframes();
   hideContentIfNoResults(facilityHasRecords);
   
   var element = document.getElementById("urlId");
-  element.innerHTML = "`+ thisURL +`";
+  element.innerHTML = thisURL;
+  g_thisURL = thisURL;
 
   // Get the modal
   g_modal = document.getElementById("myModal");
@@ -102,9 +103,6 @@ function closeModal(){
 
 
 function reload_page(){
-   alert(window.location.href);
-   alert(document.URL);
-
    window.location.replace("` + thisURL + `");
 }
 
