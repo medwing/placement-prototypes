@@ -70,6 +70,12 @@ function loadDetailsPane(view){
 
   var detailsIframe = document.getElementById("detailsIframe");
   g_triggerExpected = true;
+  
+  if (view === "")
+  {
+    view = detailsIframe.src;
+  }
+  
   detailsIframe.src = view;
 }
 
