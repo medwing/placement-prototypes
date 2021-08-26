@@ -10,9 +10,9 @@ var g_modaliframe;
 var g_triggerExpected = true; //first page load
 
 
-function bootload(){
+function bootload(facilityHasRecords){
   invokeIframes();
-  hideContentIfNoResults(`+ facilityReviewExists(facilityId) +`);
+  hideContentIfNoResults(facilityHasRecords);
   
   var element = document.getElementById("urlId");
   element.innerHTML = "`+ thisURL +`";
