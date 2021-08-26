@@ -107,6 +107,12 @@ function reload_page(){
 }
 
 function reload_iframes() {
+    g_triggerExpected=true;
+    loadDetailsPane();
+
+    var summaryIframe = document.getElementById("summaryIframe");
+    summaryIframe.src = summaryIframe.src;
+  
     setTimeout(function(){
       g_triggerExpected=true;
       loadDetailsPane();
@@ -114,6 +120,6 @@ function reload_iframes() {
       var summaryIframe = document.getElementById("summaryIframe");
       summaryIframe.src = summaryIframe.src;
     
-    }, 300);  
+    }, 2000);  
 
 }
