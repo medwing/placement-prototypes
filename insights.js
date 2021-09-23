@@ -1,13 +1,4 @@
 
-
-var g_modal;
-var g_modaliframe;
-
-//This hack essentially allows us to catch the child details iframe has had an edit occur
-//and that we should refresh the parent so that the summary calculates again.
-//We use the global variable because we are allowed to know when an iframe has reloaded via the onload event
-//but not to which URL it loaded (security cross-domain blah blah)
-var g_triggerExpected = true; //first page load
 var g_thisURL;
 
 function bootload(thisURL){
@@ -25,6 +16,16 @@ function invokeIframes(){
   iFrameResize({ log: true }, '#detailsIframe');
 }
 
+function loadDetailsPane(view){
 
+  var detailsIframe = document.getElementById("detailsIframe");
+  
+  if (!view)
+  {
+    view = detailsIframe.src;
+  }
+  
+  detailsIframe.src = view;
+}
 
 
