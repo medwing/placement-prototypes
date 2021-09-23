@@ -16,102 +16,15 @@ function bootload(thisURL){
   var element = document.getElementById("urlId");
   element.innerHTML = thisURL;
   g_thisURL = thisURL;
-
-  // Get the modal
-  g_modal = document.getElementById("myModal");
-  g_modaliframe = document.getElementById("modaliframe");
-
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-    if (event.target == g_modal) {
-      closeModal();
-    }
-  };
-
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
-
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
-    closeModal();
-  };
-}
-
-
-function showingNoContentScreen(){
-  var element = document.getElementById("noReviews");
-  if (element.style.display == "block")
-  {
-    return true;
-  }
-
-  return false;
-}
-
-function hideContentIfNoResults(showContent){
-  showContent = true;
   
-  if (!showContent){
-    var element = document.getElementById("noReviews");
-    element.style.display = "block";
-  }
-  else 
-  {
-    var element = document.getElementById("content");
-    element.style.display = "block";
-  }
 }
 
 function invokeIframes(){
   iFrameResize({ log: true }, '#summaryIframe');
+  iFrameResize({ log: true }, '#overviewIframe');
   iFrameResize({ log: true }, '#detailsIframe');
 }
 
 
-function loadDetailsPane(view){
-
-  var detailsIframe = document.getElementById("detailsIframe");
-  g_triggerExpected = true;
-  
-  if (!view)
-  {
-    view = detailsIframe.src;
-  }
-  
-  detailsIframe.src = view;
-}
-
-function onLoadHandler_ReloadIfEditingWasDoneInsideTheIFrame(){
-  if (g_triggerExpected)
-  {
-    g_triggerExpected = false;
-    return;
-  }
-
-  //we want to update both the summary and rehit the details
-  reload_iframes();
-}
-
-function showModal(url) {
-  g_modal.style.display = "block";
-  modaliframe.src = url;
-}
-
-function closeModal(){
-  g_modal.style.display = "none";
-  reload_iframes();
-}
 
 
-function reload_page(){
-   window.location.replace(g_thisURL);
-}
-
-function reload_iframes() {
-    g_triggerExpected=true;
-    loadDetailsPane();
-
-    var summaryIframe = document.getElementById("summaryIframe");
-    summaryIframe.src = summaryIframe.src;  
-
-}
