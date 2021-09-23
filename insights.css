@@ -1,0 +1,185 @@
+/* styling the line item */
+
+.sub_text {
+   font-size: 12px;
+   line-height: 16px;
+   margin: 5px 0 0 0;
+   color: #666;
+}
+
+.screen {
+    text-align:justify;
+    width:100%;
+}
+
+.body{
+    color: rgb(72, 80, 100);
+}
+
+.button-medwing {
+    padding: 6px;
+    background: rgb(241, 246, 250);
+    border: 1px solid rgb(230, 241, 250);
+    border-radius: 5px;
+    margin-right: 10px;
+    color: rgb(101, 152, 203);
+    font-size: 0.75rem;
+    cursor: pointer;
+}	
+
+/* Main Page - needs refactoring **/
+
+  iframe {
+    width: 1px;
+    min-width: 100%;
+    border:none;
+  }
+
+  a {
+    font-family: "Roboto", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.75rem;
+    width: 90%;
+    color: rgb(177, 186, 207);
+  }
+
+  .debug {
+    font-family: "Roboto", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.75rem;
+    width: 90%;
+    color: rgb(177, 186, 207);
+  }
+
+  .facilityName {
+    font-family: "Roboto", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 90%;
+    margin-bottom: 10px;
+    color: rgb(72, 80, 100);
+  }
+
+  .prototypeWarning {
+    font-family: "Roboto", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.875rem;
+    color: rgb(72, 80, 100);
+    max-width: 300px;
+    margin: 0px auto;
+  }
+
+  .infoText {
+    font-family: "Roboto", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.75rem;
+    color: rgb(72, 80, 100);
+  }
+
+
+/*** Awesome Table ***/
+/*
+.awt-csvFilter-button {
+	border: 1px solid rgba(0, 0, 0, 0.1) !important;
+	background-color: #835A58 !important;
+	color: #11E440 !important;
+	display: flex !important;
+	padding: 15px 12px !important;
+	vertical-align: middle !important;
+}
+*/
+/*** Google visualization override ***/
+
+/* Table view header */
+.google-visualization-table-table .gradient,
+.google-visualization-table-div-page .gradient {
+        background: #3C81F8 !important;
+        color:#ffffff;
+}
+
+/* selected/hovered row in a TABLE view */
+.google-visualization-table-tr-sel td,
+.google-visualization-table-tr-over td {
+        background-color: #FFFFFF!important;
+}
+
+
+/*** Configuration of FILTERS ***/
+
+
+/* CategoryFilter & csvFilter hovered item in the dropdown */
+.charts-menuitem-highlight {
+        background-color:#3C81F8!important;
+        color:#FFF!important;
+}
+
+/* header */
+.google-visualization-table-table .gradient, .google-visualization-table-div-page .gradient {
+        background: #9DD0F1 !important;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        font-weight: normal;
+	padding: 8px 8px !important;
+}
+
+.google-visualization-controls-label {
+        font-weight: 500!important;
+}
+
+@media (max-width: 550px) {
+        .mobile {
+                margin: 10px auto 10px auto!important;
+                float:none;
+        }
+        .mobile-bis {
+                margin : 10px!important;
+        }
+}
+@media (min-width: 550px) {
+        .mobile {
+                margin: 20px!important;
+                float:left;
+        }
+        .mobile-bis {
+                margin : 20px!important;
+        }
+}
+
+
+
+/* The Modal (background) - for the parent view */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 5% from the top and centered */
+    padding: 5px;
+    border: 1px solid #888;
+    min-width: 600px;
+    width: 80%; /* Could be more or less, depending on screen size */
+    height: 95%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
