@@ -11,9 +11,9 @@ function bootload(thisURL){
 }
 
 function invokeIframes(){
-  iFrameResize({ log: true }, '#summaryIframe');
-  iFrameResize({ log: true }, '#overviewIframe');
-  iFrameResize({ log: true }, '#detailsIframe');
+  iFrameResize({ log: true }, '#summaryIframeInsights');
+  iFrameResize({ log: true }, '#overviewIframeInsights');
+  iFrameResize({ log: true }, '#detailsIframeInsights');
 }
 
 function loadDetailsPane(view){
