@@ -18,7 +18,7 @@ function invokeIframes(){
 
 function loadDetailsPane(view){
 
-  var detailsIframe = document.getElementById("detailsIframe");
+  var detailsIframe = document.getElementById("detailsIframeInsights");
   
   if (!view)
   {
