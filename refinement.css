@@ -1,0 +1,177 @@
+        /* Style the button that is used to open and close the collapsible content */
+        .column {
+            float: left;
+            width: 50%;
+        }
+
+        .columnPadding {
+            padding: 10px
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+
+        .collapsible {
+            background-color: white;
+            cursor: pointer;
+            width: 100%;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            border-color: rgb(230, 241, 250);
+            border-bottom-width: 3px;
+            border-bottom-color: rgb(170, 187, 204);
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            color: rgb(101, 152, 203);
+            font-weight: normal;
+            padding: 8px 8px !important;
+        }
+
+        /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+
+        .results {
+            background-color: #9DD0F1;
+            color: #444;
+            cursor: pointer;
+            padding: 2px;
+            width: 95%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+
+        /* Style the collapsible content. Note: hidden by default */
+
+        .filterContent {
+            padding: 0 18px;
+            display: block;
+            overflow: hidden;
+            background-color: white;
+            ;
+        }
+
+        .tabulator-row {
+            font-family: "Roboto", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 0.75rem;
+        }
+
+        .tabulator-row .tabulator-responsive-collapse table {
+            font-family: "Roboto", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 0.75rem;
+        }
+
+        .tabulator-group {
+            font-family: "Roboto", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 0.75rem;
+        }
+
+        .tabulator-header {
+            font-family: "Roboto", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 0.75rem;
+        }
+
+        .dropdown-option {
+            font-family: "Roboto", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 0.75rem;
+        }
+
+        .dropdown-group {
+            font-family: "Roboto", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 0.75rem;
+        }
+
+        .filterHeader {
+            font-family: "Roboto", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 0.75rem;
+        }
+
+        .resultsHeader {
+            font-family: "Roboto", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .filterOptions {
+            color: rgb(101, 152, 203);
+            cursor: pointer;
+            font-family: "Roboto", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 0.65rem;
+            text-align: right;
+            float: right;
+            padding-left: 5px;
+        }
+
+        .dropdown-mul-1 {
+            padding-bottom: 3px;
+            padding-left:3px;
+            padding-right:3px;
+        }
+
+        .button-medwing {
+            padding: 6px;
+            background: rgb(241, 246, 250);
+            border: 1px solid rgb(230, 241, 250);
+            border-radius: 5px;
+            margin-right: 10px;
+            color: rgb(101, 152, 203);
+            font-size: 0.75rem;
+            cursor: pointer;
+        }
+
+        .note {
+            font-family: "Roboto", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 0.55rem;
+            color: grey
+        }
+
+        /* Tooltip container */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+            /* If you want dots under the hoverable text */
+        }
+
+        .tooltip .tooltiptext {
+            width: 120px;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -60px;
+            /* Use half of the width (120/2 = 60), to center the tooltip */
+            font-family: "Roboto", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 0.65rem;
+
+        }
+
+        /* Tooltip text */
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 300px;
+            background-color: rgba(101, 152, 203, 0.95);
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            border-radius: 6px;
+            /* Position the tooltip text - see examples below! */
+            position: absolute;
+            z-index: 1;
+        }
+
+        /* Show the tooltip text when you mouse over the tooltip container */
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+
+        .countsText{
+            font-family: "Roboto", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 0.85rem;  
+            padding: 10px 0;
+        }
