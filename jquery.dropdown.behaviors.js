@@ -156,9 +156,9 @@
 
                     var match = false;
                     if (Array.isArray(value)) {
-                        match = candidateOptions.every(elem => value.includes(elem));
+                        match = candidateOptions?.every(elem => value.includes(elem));
                     } else {
-                        match = candidateOptions.includes(value);
+                        match = candidateOptions?.includes(value);
                     }
 
                     if (match) {
@@ -173,7 +173,7 @@
                     }
                     else 
                     {
-                      match = ! candidateOptions.some(elem => value.includes(elem));
+                      match = ! candidateOptions?.some(elem => value.includes(elem));
                     }
                     if (match) {
                         preferencesMatchCount++;
@@ -200,9 +200,9 @@
                 else if (computeMethod == COMPUTE_METHODS.ANY) {
                     var match = false;
                     if (Array.isArray(value)) {
-                        match = value.some(elem => candidateOptions.includes(elem));
+                        match = value?.some(elem => candidateOptions.includes(elem));
                     } else {
-                        match = candidateOptions.includes(value);
+                        match = candidateOptions?.includes(value);
                     }
 
                     if (match) {
