@@ -182,7 +182,14 @@
                 else if (computeMethod == COMPUTE_METHODS.LESSTHAN) {
 
                     var candidateOption = Math.max(candidateOptions);
-                    var match = (candidateOption >= value);
+                    var match;
+                        
+                    if (!value || value = ""){
+                        match = false;
+                    }else if(candidateOption >= value)
+                    {
+                        match = true;       
+                    }
 
                     if (match) {
                         preferencesMatchCount++;
@@ -191,8 +198,15 @@
                 else if (computeMethod == COMPUTE_METHODS.GREATERTHAN) {
 
                     var candidateOption = Math.min(candidateOptions);
-                    var match = (candidateOption <= value);
-
+                    var match;
+                        
+                    if (!value || value = ""){
+                        match = false;
+                    }else if(candidateOption <= value)
+                    {
+                        match = true;       
+                    }
+                        
                     if (match) {
                         preferencesMatchCount++;
                     }
