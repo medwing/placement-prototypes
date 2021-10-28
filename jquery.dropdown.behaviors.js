@@ -184,9 +184,10 @@
                     var candidateOption = Math.max(candidateOptions);
                     var match;
                         
-                    if (!value || value = ""){
+                    if (!value || value == ""){
                         match = false;
-                    }else if(candidateOption >= value)
+                    }
+                    else if(candidateOption >= value)
                     {
                         match = true;       
                     }
@@ -200,9 +201,10 @@
                     var candidateOption = Math.min(candidateOptions);
                     var match;
                         
-                    if (!value || value = ""){
+                    if (!value || value == ""){
                         match = false;
-                    }else if(candidateOption <= value)
+                    }
+                    else if(candidateOption <= value)
                     {
                         match = true;       
                     }
