@@ -166,7 +166,15 @@
                     }
                 }
                 else if (computeMethod == COMPUTE_METHODS.EXCLUDE) { //exclude
-                    var match = candidateOptions.some(elem => value.includes(elem));
+                    var match;
+                    if (value.length == 0)
+                    {
+                      match = false;
+                    }
+                    else 
+                    {
+                      match = candidateOptions.some(elem => value.includes(elem));
+                    }
                     if (!match) {
                         preferencesMatchCount++;
                     }
