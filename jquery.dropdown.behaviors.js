@@ -173,9 +173,9 @@
                     }
                     else 
                     {
-                      match = candidateOptions.some(elem => value.includes(elem));
+                      match = ! candidateOptions.some(elem => value.includes(elem));
                     }
-                    if (!match) {
+                    if (match) {
                         preferencesMatchCount++;
                     }
                 }
