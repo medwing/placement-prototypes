@@ -25,11 +25,11 @@
         }
 
         function dropDown_Revert(element, fieldsArray, candidateOptionsArray, dataForCountsArray, computeMethod,
-            markup, onChoiceSelectedCallback, includeEmpty) {
+            markup, onChoiceSelectedCallback, filterEmpty) {
 
             element.data('dropdown').destroy();
             dropdown_Populate(element, fieldsArray, candidateOptionsArray, dataForCountsArray, true,
-                computeMethod, markup, onChoiceSelectedCallback, includeEmpty);
+                computeMethod, markup, onChoiceSelectedCallback, filterEmpty);
             dropdown_ToggleRevertVisibility(element, candidateOptionsArray, markup);
             dropdown_Blur(element);
         }
@@ -74,7 +74,7 @@
         }
 
         function dropdown_Populate(element, fieldsArray, candidateOptions,
-            dataForCountsArray, selectPreferences, computeMethod, markup, onChoiceSelectedCallback, includeEmpty) {
+            dataForCountsArray, selectPreferences, computeMethod, markup, onChoiceSelectedCallback, filterEmpty) {
             //1. Create the options objects
             var menuItemsArray = [];
             $.each(fieldsArray, function (index, value) {
@@ -110,7 +110,7 @@
                 }
             });
 
-            dropdown_SetRevertCount(element, dataForCountsArray, candidateOptions, computeMethod, includeEmpty);
+            dropdown_SetRevertCount(element, dataForCountsArray, candidateOptions, computeMethod, filterEmpty);
             dropdown_ToggleRevertVisibility(element, candidateOptions, markup, onChoiceSelectedCallback);
 
             dropdown_Blur(element);
@@ -129,9 +129,9 @@
             return out;
         }
 
-        function dropdown_SetRevertCount(element, dataForCountsArray, candidateOptionsArray, computeMethod, includeEmpty) {
+        function dropdown_SetRevertCount(element, dataForCountsArray, candidateOptionsArray, computeMethod, filterEmpty) {
             //add counts - assumes an array of options
-            var preferencesMatchCount = dropdown_CalculateCounts(dataForCountsArray, candidateOptionsArray, computeMethod, includeEmpty);
+            var preferencesMatchCount = dropdown_CalculateCounts(dataForCountsArray, candidateOptionsArray, computeMethod, filterEmpty);
 
             var revertEl = $(element).children(".revert");
             if (revertEl) {
@@ -139,10 +139,11 @@
             }
         }
 
-        function dropdown_CalculateCounts(dataForCountsArray, candidateOptions, computeMethod, includeEmpty) {
+        function dropdown_CalculateCounts(dataForCountsArray, candidateOptions, computeMethod, filterEmpty) {
 
             //add counts - assumes an array of options
             var preferencesMatchCount = 0;
+            var includeEmpty = !filterEmpty;
             $.each(dataForCountsArray, function (index, value) {
 
                 if (computeMethod == COMPUTE_METHODS.INCLUDE) {
