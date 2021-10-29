@@ -25,11 +25,11 @@
         }
 
         function dropDown_Revert(element, fieldsArray, candidateOptionsArray, dataForCountsArray, computeMethod,
-            markup, onChoiceSelectedCallback) {
+            markup, onChoiceSelectedCallback, includeEmpty) {
 
             element.data('dropdown').destroy();
             dropdown_Populate(element, fieldsArray, candidateOptionsArray, dataForCountsArray, true,
-                computeMethod, markup, onChoiceSelectedCallback);
+                computeMethod, markup, onChoiceSelectedCallback, includeEmpty);
             dropdown_ToggleRevertVisibility(element, candidateOptionsArray, markup);
             dropdown_Blur(element);
         }
@@ -74,7 +74,7 @@
         }
 
         function dropdown_Populate(element, fieldsArray, candidateOptions,
-            dataForCountsArray, selectPreferences, computeMethod, markup, onChoiceSelectedCallback) {
+            dataForCountsArray, selectPreferences, computeMethod, markup, onChoiceSelectedCallback, includeEmpty) {
             //1. Create the options objects
             var menuItemsArray = [];
             $.each(fieldsArray, function (index, value) {
@@ -110,7 +110,7 @@
                 }
             });
 
-            dropdown_SetRevertCount(element, dataForCountsArray, candidateOptions, computeMethod);
+            dropdown_SetRevertCount(element, dataForCountsArray, candidateOptions, computeMethod, includeEmpty);
             dropdown_ToggleRevertVisibility(element, candidateOptions, markup, onChoiceSelectedCallback);
 
             dropdown_Blur(element);
@@ -129,9 +129,9 @@
             return out;
         }
 
-        function dropdown_SetRevertCount(element, dataForCountsArray, candidateOptionsArray, computeMethod) {
+        function dropdown_SetRevertCount(element, dataForCountsArray, candidateOptionsArray, computeMethod, includeEmpty) {
             //add counts - assumes an array of options
-            var preferencesMatchCount = dropdown_CalculateCounts(dataForCountsArray, candidateOptionsArray, computeMethod);
+            var preferencesMatchCount = dropdown_CalculateCounts(dataForCountsArray, candidateOptionsArray, computeMethod, includeEmpty);
 
             var revertEl = $(element).children(".revert");
             if (revertEl) {
@@ -139,23 +139,20 @@
             }
         }
 
-        function dropdown_CalculateCounts(dataForCountsArray, candidateOptions, computeMethod) {
+        function dropdown_CalculateCounts(dataForCountsArray, candidateOptions, computeMethod, includeEmpty) {
 
             //add counts - assumes an array of options
             var preferencesMatchCount = 0;
             $.each(dataForCountsArray, function (index, value) {
 
-                if (typeof computeMethod === 'function') {
-                    // do something
-                    var match = computeMethod(value, candidateOptions);
-                    if (match) {
-                        preferencesMatchCount++;
-                    }
-                }
-                else if (computeMethod == COMPUTE_METHODS.INCLUDE) {
+                if (computeMethod == COMPUTE_METHODS.INCLUDE) {
 
                     var match = false;
-                    if (Array.isArray(value)) {
+                    if (!value || value== "" || value.length == 0)
+                    {
+                      match = includeEmpty;
+                    }
+                    else if (Array.isArray(value)) {
                         match = candidateOptions?.every(elem => value.includes(elem));
                     } else {
                         match = candidateOptions?.includes(value);
@@ -167,14 +164,15 @@
                 }
                 else if (computeMethod == COMPUTE_METHODS.EXCLUDE) { //exclude
                     var match;
-                    if (value.length == 0)
+                    if (!value || value== "" || value.length == 0)
                     {
-                      match = false;
+                      match = includeEmpty;
                     }
                     else 
                     {
                       match = ! candidateOptions?.some(elem => value.includes(elem));
                     }
+
                     if (match) {
                         preferencesMatchCount++;
                     }
@@ -184,8 +182,9 @@
                     var candidateOption = Math.max(candidateOptions);
                     var match;
                         
-                    if (!value || value == ""){
-                        match = false;
+                    if (!value || value== "" || value.length == 0)
+                    {
+                      match = includeEmpty;
                     }
                     else if(candidateOption >= value)
                     {
@@ -201,8 +200,9 @@
                     var candidateOption = Math.min(candidateOptions);
                     var match;
                         
-                    if (!value || value == ""){
-                        match = false;
+                    if (!value || value== "" || value.length == 0)
+                    {
+                      match = includeEmpty;
                     }
                     else if(candidateOption <= value)
                     {
@@ -215,7 +215,11 @@
                 }
                 else if (computeMethod == COMPUTE_METHODS.ANY) {
                     var match = false;
-                    if (Array.isArray(value)) {
+                    if (!value || value== "" || value.length == 0)
+                    {
+                      match = includeEmpty;
+                    }
+                    else if (Array.isArray(value)) {
                         match = value?.some(elem => candidateOptions.includes(elem));
                     } else {
                         match = candidateOptions?.includes(value);
