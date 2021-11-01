@@ -103,7 +103,7 @@
             $(element).dropdown({
                 data: menuItemsArray,
                 multipleMode: 'label',
-                searchable: false,
+                searchable: true,
                 choice: function () {
                     dropdown_ToggleRevertVisibility($(element), candidateOptions, markup);
                     onChoiceSelectedCallback();
