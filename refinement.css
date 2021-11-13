@@ -175,3 +175,10 @@
             font-size: 0.85rem;  
             padding: 10px 0;
         }
+
+        .loading{
+            font-family: "Roboto", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 0.85rem;  
+            color: red;
+            padding: 10px 0;
+        }
