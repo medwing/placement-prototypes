@@ -15,6 +15,10 @@
             clear: both;
         }
 
+        .rating-container {
+            height:17px;
+            overflow:hidden;
+        }
 
         .collapsible {
             background-color: white;
