@@ -192,3 +192,9 @@
             color: red;
             padding: 10px 0;
         }
+
+        .subDetails {
+            font-family: "Roboto", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 0.65rem;
+            color: grey
+        }
