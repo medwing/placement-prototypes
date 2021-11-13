@@ -20,6 +20,12 @@
             overflow:hidden;
         }
 
+        .rating {
+            width:100px;
+            left: -11px;
+            position: relative;
+        }
+
         .collapsible {
             background-color: white;
             cursor: pointer;
