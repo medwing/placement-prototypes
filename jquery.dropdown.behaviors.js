@@ -112,7 +112,7 @@ function dropdown_Populate(element, fieldsArray, candidateOptions,
         }
     });
 
-    dropdown_SetRevertCounts(element, dataForCountsArray, candidateOptions, computeMethod, filterEmpty);
+    dropdown_SetRevertCount(element, dataForCountsArray, candidateOptions, computeMethod, filterEmpty);
     dropdown_SetCountsForOptions(element, dataForCountsArray, computeMethod, filterEmpty);
     dropdown_ToggleRevertVisibility(element, candidateOptions, markup, onChoiceSelectedCallback);
 
