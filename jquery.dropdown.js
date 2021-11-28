@@ -384,11 +384,15 @@
         }
       });
 
-      $select.find('option[value="' + value + '"]').prop('selected', true);
+       $select.find('option[value="' + value + '"]').prop('selected', hasSelected ? false : true);
 
-      _dropdown.name.push('<span class="placeholder">' + _dropdown.placeholder + '</span>');
-      _dropdown.$choseList.html(_dropdown.name.join(''));
-      _config.choice.call(_dropdown, event);
+       if (hasSelected && _dropdown.selectAmount < _config.minCount) {
+         minItemsAlert.call(_dropdown);
+       }
+
+       _dropdown.$choseList.find('.dropdown-selected').remove();
+       _dropdown.$choseList.prepend(_dropdown.name.join(''));
+       _config.choice.call(_dropdown, event);
     },
     del: function (event) {
       var _dropdown = this;
