@@ -223,7 +223,7 @@ function dropdown_CalculateCounts(dataForCountsArray, candidateOptions, computeM
     return preferencesMatchCount;
 }
 
-function dropdown_SetRevertCounts(element, filteredDataForCountsArray, candidateOptionsArray, computeMethod, filterEmpty) {
+function dropdown_SetRevertCount(element, filteredDataForCountsArray, candidateOptionsArray, computeMethod, filterEmpty) {
     //add counts - assumes an array of options
     var preferencesMatchCount = dropdown_CalculateCounts(filteredDataForCountsArray, candidateOptionsArray, computeMethod, filterEmpty);
 
