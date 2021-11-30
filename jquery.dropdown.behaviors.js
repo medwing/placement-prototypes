@@ -38,7 +38,7 @@ function dropdown_ToggleRevertVisibility(element, candidateOptionsArray, markup)
 
     var revertEl = $(element).children(".revert");
 
-    if (candidateOptionsArray.length == 0) {
+    if (candidateOptionsArray.length == 0){
         revertEl.css("display", "none");
         return;
     }
@@ -125,13 +125,20 @@ function dropdown_GetSelectedArray(element, markup) {
 
     var out = [];
     $.each(list, function (index, value) {
-        var option = value.outerText.replace(markup, "");
+        option = drowdown_RemoveCountFromOption(value.outerText);
 
-        option = drowdown_RemoveCountFromOption(option);
+         //remove markup
+         option = option.replace(MARKUP.PREFERRED, "");
+         option = option.replace(MARKUP.QUALIFIED, "");  
+         
+         if (option[0]=='-'){
+            option = "";
+        }
 
         out.push(option);
     });
 
+    
     return out;
 }
 
@@ -145,8 +152,9 @@ function dropdown_CalculateCounts(dataForCountsArray, candidateOptions, computeM
         if (computeMethod == COMPUTE_METHODS.INCLUDE) {
 
             var match = false;
-            if (!value || value == "" || value.length == 0) {
-                match = includeEmpty;
+            if (!value || value== "" || value.length == 0)
+            {
+              match = includeEmpty;
             }
             else if (Array.isArray(value)) {
                 match = candidateOptions?.every(elem => value.includes(elem));
@@ -160,11 +168,13 @@ function dropdown_CalculateCounts(dataForCountsArray, candidateOptions, computeM
         }
         else if (computeMethod == COMPUTE_METHODS.EXCLUDE) { //exclude
             var match = false;
-            if (!value || value == "" || value.length == 0) {
-                match = includeEmpty;
+            if (!value || value== "" || value.length == 0)
+            {
+              match = includeEmpty;
             }
-            else {
-                match = !candidateOptions?.some(elem => value.includes(elem));
+            else 
+            {
+              match = ! candidateOptions?.some(elem => value.includes(elem));
             }
 
             if (match) {
@@ -175,12 +185,14 @@ function dropdown_CalculateCounts(dataForCountsArray, candidateOptions, computeM
 
             var candidateOption = Math.max(candidateOptions);
             var match = false;
-
-            if (!value || value == "" || value.length == 0) {
-                match = includeEmpty;
+                
+            if (!value || value== "" || value.length == 0)
+            {
+              match = includeEmpty;
             }
-            else if (candidateOption >= value) {
-                match = true;
+            else if(candidateOption >= value)
+            {
+                match = true;       
             }
 
             if (match) {
@@ -191,22 +203,25 @@ function dropdown_CalculateCounts(dataForCountsArray, candidateOptions, computeM
 
             var candidateOption = Math.min(candidateOptions);
             var match = false;
-
-            if (!value || value == "" || value.length == 0) {
-                match = includeEmpty;
+                
+            if (!value || value== "" || value.length == 0)
+            {
+              match = includeEmpty;
             }
-            else if (candidateOption <= value) {
-                match = true;
+            else if(candidateOption <= value)
+            {
+                match = true;       
             }
-
+                
             if (match) {
                 preferencesMatchCount++;
             }
         }
         else if (computeMethod == COMPUTE_METHODS.ANY) {
             var match = false;
-            if (!value || value == "" || value.length == 0) {
-                match = includeEmpty;
+            if (!value || value== "" || value.length == 0)
+            {
+              match = includeEmpty;
             }
             else if (Array.isArray(value)) {
                 match = value?.some(elem => candidateOptions.includes(elem));
@@ -234,28 +249,28 @@ function dropdown_SetRevertCount(element, filteredDataForCountsArray, candidateO
 }
 
 var COUNTDELIM = " - [";
-function drowdown_RemoveCountFromOption(option) {
+function drowdown_RemoveCountFromOption(option){
 
-    if (!option) {
+    if (!option){
         return option;
     }
 
     //remove count if exists
-    var countIndex = option.indexOf(COUNTDELIM);
-    if (countIndex != -1) {
-        option = option.substring(0, countIndex);
-    }
+   var countIndex = option.indexOf(COUNTDELIM);
+   if (countIndex!=-1){
+      option = option.substring(0, countIndex);
+   }
 
-    return option;
+   return option;
 }
 
 function dropdown_GetOptionsArrayWithoutCountsAndMarkups(element) {
     var list = $(element).find(".dropdown-option");
-
+    
     //Still will have preference markups
 
     var out = [];
-    $.each(list, function (index, value) {
+    $.each(list, function (index, value) { 
         var txtValue = drowdown_RemoveCountFromOption(value.outerText);
 
         //remove markup
@@ -269,7 +284,7 @@ function dropdown_GetOptionsArrayWithoutCountsAndMarkups(element) {
 }
 
 
-function dropdown_SetCountsForOptions(element, dataForCountsArray, computeMethod, filterEmpty) {
+function dropdown_SetCountsForOptions(element, dataForCountsArray, computeMethod, filterEmpty){
 
     var options = dropdown_GetOptionsArrayWithoutCountsAndMarkups(element);
 
@@ -277,21 +292,25 @@ function dropdown_SetCountsForOptions(element, dataForCountsArray, computeMethod
 
     //now set the counts on the options
     var list = $(element).find(".dropdown-option");
-
+    
     $.each(list, function (index, value) {
 
         var option = value;
         option = drowdown_RemoveCountFromOption(option.outerText);
+        //remove markup
+        option = option.replace(MARKUP.PREFERRED, "");
+        option = option.replace(MARKUP.QUALIFIED, "");
 
         // add the count
-        for (var i = 0; i < optionCounts.length; i++) {
+        for(var i=0; i<optionCounts.length; i++){
+            var optionCount = optionCounts[i];
 
-            if (option.includes(optionCounts[i].name)) {
-                option = option + COUNTDELIM + optionCounts[i].count + "]";
+            if (option == optionCount.name){
+                option = option + COUNTDELIM + optionCount.count + "]";
             }
         }
 
-        value.textContent = option;
+        value.textContent = option;       
     });
 }
 
@@ -301,24 +320,29 @@ function dropdown_CalculateCountsForOptions(dataForCountsArray, options, compute
 
     //Create the count objects
     var optionCounts = [];
+    
 
-
-    for (var i = 0; i < options.length; i++) {
-        optionCounts.push({ 'name': options[i], 'count': 0 });
+    for(var i=0; i <options.length; i++){
+        optionCounts.push({'name': options[i], 'count': 0});
     }
 
     $.each(dataForCountsArray, function (index, value) {
 
-        for (var i = 0; i < options.length; i++) {
-
+        for(var i=0; i < optionCounts.length ; i++){
+            
             var option = optionCounts[i];
 
-            if (computeMethod == COMPUTE_METHODS.INCLUDE) {
+            if (option.name == "" && (!value || value== "" || value.length == 0)){
+                //handle empty field
+                option.count++;
+            }
+            else if (computeMethod == COMPUTE_METHODS.INCLUDE) {
 
                 var match = false;
-                if (!value || value == "" || value.length == 0) {
+                if (!value || value== "" || value.length == 0)
+                {
                     match = includeEmpty;
-                } else if (Array.isArray(value)) {
+                }else if (Array.isArray(value)) {
                     match = value?.some(elem => option.name == elem);
                 } else {
                     match = option.name == value;
@@ -330,14 +354,16 @@ function dropdown_CalculateCountsForOptions(dataForCountsArray, options, compute
             }
             else if (computeMethod == COMPUTE_METHODS.EXCLUDE) { //exclude
                 var match = false;
-                if (!value || value == "" || value.length == 0) {
+                if (!value || value== "" || value.length == 0)
+                {
                     match = includeEmpty;
                 }
-                else if (Array.isArray(value)) {
-                    match = !value.includes(option.name);
+                else if (Array.isArray(value)) 
+                {
+                    match = ! value.includes(option.name);
                 }
-                else {
-                    match = !(value == option.name);
+                else{
+                    match = ! (value == option.name);
                 }
 
                 if (match) {
@@ -349,12 +375,14 @@ function dropdown_CalculateCountsForOptions(dataForCountsArray, options, compute
                 var match = false;
 
                 var num = parseFloat(option.name);
-
-                if (!value || value == "" || value.length == 0 || isNaN(num)) {
+                    
+                if (!value || value== "" || value.length == 0 || isNaN(num))
+                {
                     match = includeEmpty;
                 }
-                else if (num >= value) {
-                    match = true;
+                else if(num >= value)
+                {
+                    match = true;       
                 }
 
                 if (match) {
@@ -366,22 +394,25 @@ function dropdown_CalculateCountsForOptions(dataForCountsArray, options, compute
                 var match = false;
 
                 var num = parseFloat(option.name);
-
-                if (!value || value == "" || value.length == 0 || isNaN(num)) {
-                    match = includeEmpty;
+                    
+                if (!value || value== "" || value.length == 0 || isNaN(num))
+                {
+                match = includeEmpty;
                 }
-                else if (num <= value) {
-                    match = true;
+                else if(num <= value)
+                {
+                    match = true;       
                 }
-
+                    
                 if (match) {
                     option.count++;
                 }
             }
             else if (computeMethod == COMPUTE_METHODS.ANY) {
                 var match = false;
-                if (!value || value == "" || value.length == 0) {
-                    match = includeEmpty;
+                if (!value || value== "" || value.length == 0)
+                {
+                match = includeEmpty;
                 }
                 else if (Array.isArray(value)) {
                     match = value?.some(elem => option.name == elem);
