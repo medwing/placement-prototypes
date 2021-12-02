@@ -297,15 +297,16 @@ function dropdown_SetCountsForOptions(element, dataForCountsArray, computeMethod
 
         var option = value;
         option = drowdown_RemoveCountFromOption(option.outerText);
-        //remove markup
-        option = option.replace(MARKUP.PREFERRED, "");
-        option = option.replace(MARKUP.QUALIFIED, "");
+
 
         // add the count
         for(var i=0; i<optionCounts.length; i++){
             var optionCount = optionCounts[i];
 
-            if (option == optionCount.name){
+            //remove markup
+            var optionStrip = option.replace(MARKUP.PREFERRED, "").replace(MARKUP.QUALIFIED, "");
+
+            if (optionStrip == optionCount.name){
                 option = option + COUNTDELIM + optionCount.count + "]";
             }
         }
@@ -313,6 +314,8 @@ function dropdown_SetCountsForOptions(element, dataForCountsArray, computeMethod
         value.textContent = option;       
     });
 }
+
+
 
 function dropdown_CalculateCountsForOptions(dataForCountsArray, options, computeMethod, filterEmpty) {
 
