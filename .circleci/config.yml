@@ -1,0 +1,31 @@
+version: 2.1
+
+defaults: &defaults
+  working_directory: ~/brendan-janssen-medwing.github.io
+
+orbs:
+  aws-s3: circleci/aws-s3@3.0
+
+jobs:
+  build:
+    <<: *defaults
+    docker:
+      - image: 'cimg/python:3.6'
+    steps:
+      - checkout
+      - aws-s3/sync:
+          arguments: |
+            --exclude \"*.DS_Store*\"
+            --cache-control "public,max-age=604800"
+          from: '.'
+          to: 's3://placement-prototypes'
+
+workflows:
+  deploy-to-aws-s3:
+    jobs:
+      - upload:
+          filters:
+            branches:
+              only: main
+          context: 
+            - aws-medwing
