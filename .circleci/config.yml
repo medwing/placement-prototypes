@@ -1,7 +1,7 @@
 version: 2.1
 
 defaults: &defaults
-  working_directory: ~/brendan-janssen-medwing.github.io
+  working_directory: ~/placement-prototypes
 
 orbs:
   aws-s3: circleci/aws-s3@3.0
