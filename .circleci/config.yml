@@ -28,4 +28,4 @@ workflows:
             branches:
               only: main
           context: 
-            - aws-medwing
+            - aws-medwing # provides AWS access keys
