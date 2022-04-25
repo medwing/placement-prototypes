@@ -15,10 +15,10 @@ jobs:
       - checkout
       - aws-s3/sync:
           arguments: |
-            --exclude "*"
-            --include "*.js"
-            --include "*.css"
-            --include "notification.svg"
+            --exclude "*" \
+            --include "*.js" \
+            --include "*.css" \
+            --include "notification.svg" \
             --cache-control "public,max-age=600"
           from: '.'
           to: 's3://placement-prototypes'
