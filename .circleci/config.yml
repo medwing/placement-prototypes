@@ -15,8 +15,7 @@ jobs:
       - checkout
       - aws-s3/sync:
           arguments: |
-            --exclude \"*.DS_Store*\"
-            --cache-control "public,max-age=604800"
+            --cache-control "public,max-age=600"
           from: '.'
           to: 's3://placement-prototypes'
 
