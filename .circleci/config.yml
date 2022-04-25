@@ -7,7 +7,7 @@ orbs:
   aws-s3: circleci/aws-s3@3.0
 
 jobs:
-  build:
+  upload:
     <<: *defaults
     docker:
       - image: 'cimg/python:3.6'
